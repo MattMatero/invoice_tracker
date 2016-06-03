@@ -54,5 +54,5 @@ Rails.application.routes.draw do
   #     resources :products
   #   end
 
-  Rails.application.routes.draw do get 'example' => 'example#index' end
+  Rails.application.routes.draw do get 'example' => 'invoice#index' end
 end
