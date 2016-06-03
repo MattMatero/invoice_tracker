@@ -1,2 +1,21 @@
-<div ng-app="app.invoiceTracker" ng-controller="invoiceController">
-  <p>Value from ctrl:</p> <p>{{exampleValue}}</p>
+<div ng-controller="invoiceController">
+  <h1> Invoices </h1>
+  <table class="table table-striped table-bordered">
+    <thead>
+      <th>#</th>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Email</th>
+      <th>Phone</th>
+    </thead>
+    <tbody>
+      <tr ng-repeat="invoice in invoices">
+        <td>{{invoice.id}}</td>
+        <td>{{invoice.firstName}}</td>
+        <td>{{invoice.lastName}}</td>
+        <td>{{invoice.email}}</td>
+        <td>{{invoice.phone}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

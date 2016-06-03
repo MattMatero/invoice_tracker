@@ -20,7 +20,7 @@ function invoiceController($scope){
       "email": "bobw@gmail.com",
       phone:"5555555555",
       tasks: [
-        {task:"brakes", amount:"350", comments:"Tipped well" }
+        {name:"brakes", amount:"350", comments:"Tipped well" }
       ]
     },
 
@@ -30,7 +30,7 @@ function invoiceController($scope){
       "email": "ronm@gmail.com",
       phone:"6666666666",
       tasks: [
-        {task:"rotors", amount:"900", comments:"Tipped poorly" }
+        {name:"rotors", amount:"900", comments:"Tipped poorly" }
       ]
     }
   ];

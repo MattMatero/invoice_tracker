@@ -15,6 +15,8 @@
 //= require angular 
 //= require angular-rails-templates  
 //= require angular
+//= require jquery
+//= require bootstrap-sprockets
 //= require_tree ./angular/templates 
 //= require_tree ./angular/modules 
 //= require_tree ./angular/filters 

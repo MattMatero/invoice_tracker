@@ -1,0 +1,41 @@
+<div ng-controller="invoiceController">
+  <h1>New Invoice</h1>
+
+  <div class="container">
+    <form class="form" name="invoiceForm">
+      <div class="form-group">
+        <input ng-model="invoice.firstName" placeholder="First Name" class="form-control"/>
+      </div>
+
+      <div class="form-group">
+        <input ng-model="invoice.lastName" placeholder="Last Name" class="form-control"/>
+      </div>
+
+      <div class="form-group">
+        <input ng-model="invoice.email" placeholder="Email" class="form-control"/>
+      </div>
+
+      <div class="form-group">
+        <input ng-model="invoice.phone" placeholder="Phone" class="form-control"/>
+      </div>
+
+      <div ng-repeat="taskNum in tasks">
+
+        <div class="form-group">
+          <input ng-model="invoice.task[taskNum].name" placeholder="Task" class="form-control"/>
+        </div>
+
+        <div class="form-group">
+          <input ng-model="invoice.task[taskNum].amount" placeholder="Amount Charged" class="form-control"/>
+        </div>
+
+        <div class="form-group">
+          <textarea ng-model="invoice.task[taskNum].comments" class="form-control" placeholder="Comments"></textarea>
+        </div>
+      </div>
+    </form>
+
+    <button ng-click="print()" type="submit" class="btn btn-default">Submit</button>
+    <button ng-disabled="!invoiceForm.$dirty" ng-click="addTask()" type="submit" class="btn btn-default">Add Task</button>
+  </div>
+</div>
