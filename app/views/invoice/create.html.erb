@@ -2,31 +2,31 @@
   <h1>New Invoice</h1>
 
   <div class="container">
-    <form class="form" name="invoiceForm">
+    <form class="form" name="invoiceForm" novalidate>
       <div class="form-group">
-        <input ng-model="invoice.firstName" placeholder="First Name" class="form-control"/>
+        <input ng-model="invoice.firstName" placeholder="First Name" class="form-control" required />
       </div>
 
       <div class="form-group">
-        <input ng-model="invoice.lastName" placeholder="Last Name" class="form-control"/>
+        <input ng-model="invoice.lastName" placeholder="Last Name" class="form-control" required />
       </div>
 
       <div class="form-group">
-        <input ng-model="invoice.email" placeholder="Email" class="form-control"/>
+        <input ng-model="invoice.email" type="email" placeholder="Email" class="form-control" required />
       </div>
 
       <div class="form-group">
-        <input ng-model="invoice.phone" placeholder="Phone" class="form-control"/>
+        <input ng-model="invoice.phone" placeholder="Phone" class="form-control" required />
       </div>
 
       <div ng-repeat="taskNum in tasks">
 
         <div class="form-group">
-          <input ng-model="invoice.task[taskNum].name" placeholder="Task" class="form-control"/>
+          <input ng-model="invoice.task[taskNum].name" placeholder="Task" class="form-control" required />
         </div>
 
         <div class="form-group">
-          <input ng-model="invoice.task[taskNum].amount" placeholder="Amount Charged" class="form-control"/>
+          <input ng-model="invoice.task[taskNum].amount" type="number" placeholder="Amount Charged" class="form-control" required />
         </div>
 
         <div class="form-group">
@@ -35,7 +35,7 @@
       </div>
     </form>
 
-    <button ng-click="print()" type="submit" class="btn btn-default">Submit</button>
+    <button ng-click="invoiceForm.$valid && print()" class="btn btn-default">Submit</button>
     <button ng-disabled="!invoiceForm.$dirty" ng-click="addTask()" type="submit" class="btn btn-default">Add Task</button>
   </div>
 </div>
