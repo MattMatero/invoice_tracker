@@ -7,6 +7,8 @@ function invoiceController($scope){
   
   $scope.print = function(){
     console.log($scope.invoice);
+    //$scope.invoices.push($scope.invoice);
+    //console.log($scope.invoices);
   };
 
   $scope.addTask = function(){
