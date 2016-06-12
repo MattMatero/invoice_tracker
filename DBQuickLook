@@ -1,0 +1,24 @@
+DB Schema:
+
+Invoices:
+id              int pkey
+task_id         int fkey -> tasks
+client_id       int fkey -> clients
+
+
+Clients:
+id              int     pkey
+invoice_id      int     fkey -> invoices
+f_name          varchar
+l_name          varchar
+email           varchar
+phone           varchar
+
+
+Tasks:
+id             int pkey
+invoice_id     int fkey -> invoices
+name           varchar
+price          double
+description    varchar
+

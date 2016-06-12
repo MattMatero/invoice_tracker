@@ -11,7 +11,37 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160611164657) do
+ActiveRecord::Schema.define(version: 20160612221550) do
+
+  create_table "clients", force: :cascade do |t|
+    t.integer  "invoice_id", limit: 4
+    t.string   "f_name",     limit: 255
+    t.string   "l_name",     limit: 255
+    t.string   "email",      limit: 255
+    t.string   "phone",      limit: 255
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
+
+  add_index "clients", ["invoice_id"], name: "index_clients_on_invoice_id", using: :btree
+
+  create_table "invoices", force: :cascade do |t|
+    t.integer  "task_id",    limit: 4
+    t.integer  "client_id",  limit: 4
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+  end
+
+  create_table "tasks", force: :cascade do |t|
+    t.integer  "invoice_id",  limit: 4
+    t.string   "name",        limit: 255
+    t.decimal  "price",                   precision: 10
+    t.string   "description", limit: 255
+    t.datetime "created_at",                             null: false
+    t.datetime "updated_at",                             null: false
+  end
+
+  add_index "tasks", ["invoice_id"], name: "index_tasks_on_invoice_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  limit: 255, default: "", null: false
@@ -31,4 +61,6 @@ ActiveRecord::Schema.define(version: 20160611164657) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
+  add_foreign_key "clients", "invoices"
+  add_foreign_key "tasks", "invoices"
 end
