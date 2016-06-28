@@ -10,10 +10,9 @@ function invoiceService($rootScope, $http, $resource){
       createInvoice: { method: "POST", params: {}}
     });
 
-  service.createInvoice = function(){
+  service.createInvoice = function(invoice){
     console.log("Sending data...");
-
-    service.resource.createInvoice({client: {name: 'matt'}});
+    return service.resource.createInvoice({client: invoice});
   };
 
 }
