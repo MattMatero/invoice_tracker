@@ -1,6 +1,6 @@
-angular.module('app.invoiceTracker').controller("invoiceController",['$scope', invoiceController]);
+angular.module('app.invoiceTracker').controller("invoiceController",['$scope', 'invoiceService', invoiceController]);
 
-function invoiceController($scope){
+function invoiceController($scope, invoiceService){
   $scope.invoice = {};
   
   $scope.tasks = [0];
@@ -13,6 +13,10 @@ function invoiceController($scope){
 
   $scope.addTask = function(){
     $scope.tasks.push($scope.tasks[$scope.tasks.length-1]+1);
+  };
+
+  $scope.submit = function(){
+    invoiceService.createInvoice();
   };
 
   $scope.invoices = [
