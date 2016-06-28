@@ -16,6 +16,7 @@ function invoiceController($scope, invoiceService){
   };
 
   $scope.submit = function(){
+    console.log('dfkffaf');
     invoiceService.createInvoice();
   };
 

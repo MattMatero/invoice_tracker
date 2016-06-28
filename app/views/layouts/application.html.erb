@@ -4,7 +4,7 @@
     <title>InvoiceTracker</title>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-    <script src="bower_components/angular-resource/angular-resource.js"></script>
+    <%= javascript_include_tag "http://ajax.googleapis.com/ajax/libs/angularjs/1.0.6/angular-resource.min.js" %>
     <%= csrf_meta_tags %>
   </head>
   <body>

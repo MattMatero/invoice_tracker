@@ -24,3 +24,4 @@
 //= require_tree ./angular/models 
 //= require_tree ./angular/services 
 //= require_tree ./angular/controllers 
+//= require angular-resource
