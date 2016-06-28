@@ -12,7 +12,7 @@ function invoiceService($rootScope, $http, $resource){
 
   service.createInvoice = function(invoice){
     console.log("Sending data...");
-    return service.resource.createInvoice({client: invoice});
+    return service.resource.createInvoice(invoice);
   };
 
 }

@@ -4,33 +4,33 @@
   <div class="container">
     <form class="form" name="invoiceForm" novalidate>
       <div class="form-group">
-        <input ng-model="invoice.firstName" placeholder="First Name" class="form-control" required />
+        <input ng-model="invoice.client.firstName" placeholder="First Name" class="form-control" required />
       </div>
 
       <div class="form-group">
-        <input ng-model="invoice.lastName" placeholder="Last Name" class="form-control" required />
+        <input ng-model="invoice.client.lastName" placeholder="Last Name" class="form-control" required />
       </div>
 
       <div class="form-group">
-        <input ng-model="invoice.email" type="email" placeholder="Email" class="form-control" required />
+        <input ng-model="invoice.client.email" type="email" placeholder="Email" class="form-control" required />
       </div>
 
       <div class="form-group">
-        <input ng-model="invoice.phone" placeholder="Phone" class="form-control" required />
+        <input ng-model="invoice.client.phone" placeholder="Phone" class="form-control" required />
       </div>
 
       <div ng-repeat="taskNum in tasks">
 
         <div class="form-group">
-          <input ng-model="invoice.task[taskNum].name" placeholder="Task" class="form-control" required />
+          <input ng-model="invoice.tasks[taskNum].name" placeholder="Task" class="form-control" required />
         </div>
 
         <div class="form-group">
-          <input ng-model="invoice.task[taskNum].amount" type="number" placeholder="Amount Charged" class="form-control" required />
+          <input ng-model="invoice.tasks[taskNum].amount" type="number" placeholder="Amount Charged" class="form-control" required />
         </div>
 
         <div class="form-group">
-          <textarea ng-model="invoice.task[taskNum].comments" class="form-control" placeholder="Comments"></textarea>
+          <textarea ng-model="invoice.tasks[taskNum].comments" class="form-control" placeholder="Comments"></textarea>
         </div>
       </div>
     </form>
