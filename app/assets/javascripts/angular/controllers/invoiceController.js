@@ -17,10 +17,10 @@ function invoiceController($scope, invoiceService){
 
   $scope.submit = function(){
     console.log('dfkffaf');
-    invoiceService.createInvoice($scope.invoice).$promise
-      .then(function(response) {
-        console.log(response);
-      });
+    console.log(invoiceService.createInvoice({invoice: $scope.invoice}));
+    // invoiceService.createInvoice($scope.invoice).$promise.then(function(response) {
+    //     console.log(response);
+    //   });
   };
 
   $scope.invoices = [

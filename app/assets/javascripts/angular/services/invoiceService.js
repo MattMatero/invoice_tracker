@@ -4,7 +4,7 @@ invoiceService.$inject = ['$rootScope', '$http', '$resource'];
 function invoiceService($rootScope, $http, $resource){
   var service = this;
 
-  service.resource = $resource('new/',
+  service.resource = $resource('submit/',
     {}, // default param
     {
       createInvoice: { method: "POST", params: {}}
